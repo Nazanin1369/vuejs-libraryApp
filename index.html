@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Naz Library</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<div class="container" id="app">
+			<div class="jumbotron lib">
+				<div class="wrapper">
+					<h1>{{ message }}</h1>
+					<p>Want to learn something? Go ahead and crowse available books.</p>
+					<p><a class="btn btn-success btn-sm" href="contact.html" role="button">Contact us</a></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="book col-xs-6 col-md-3" v-for="(book, index) in books">
+				<div class="thumbnail">
+					<img v-bind:src="book.img" :alt="book.name">
+					<div class="caption">
+						<h3>{{ book.name }}</h3>
+						<h4><p>by {{ book.author }}</p></h4>
+						<p>{{ book.summary }}</p>
+						<p>
+							<a v-on:click="placeHold($event, index)" class="btn btn-success" role="button" v-bind:key="book.name">Borrow</a>
+							<a v-bind:href="book.url" class="btn btn-default" role="button">Buy Online</a>
+						</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/vue/dist/vue.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+	<script src="node_modules/vuefire/dist/vuefire.js"></script>
+	<script type="text/javascript" src="src/app.js"></script>
+	<script type="text/javascript" src="src/hold.js"></script>
+</html>

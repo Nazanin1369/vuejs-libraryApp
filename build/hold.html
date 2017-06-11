@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Naz Library</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body id="main">
+		<div class="container">
+			<div class="jumbotron lib">
+				<div class="wrapper">
+					<h1>Place Hold</h1>
+				</div>
+			</div>
+
+            <div id="hold">
+                <form>
+                     <div class="form-group">
+                        <div class="alert alert-success" role="alert"><h3>Desired Book Name: {{bookName}}</h3></div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Your Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Your Full Name</label>
+                        <input class="form-control" id="exampleInputPassword1" placeholder="Full Name">
+                    </div>
+                     <div class="form-group">
+                        <label for="exampleInputMember1">Your Memebership Id</label>
+                        <input type="password" class="form-control" id="exampleInputMember1" placeholder="Membership id">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                        <input type="checkbox"> Currently holding this book?
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success" v-on:click="submitHold()">Place Hold</button>
+                </form>
+            </div>
+        </div>
+	</body>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+     <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="src/hold.js"></script>
+</html>
